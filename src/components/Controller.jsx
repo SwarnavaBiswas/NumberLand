@@ -158,6 +158,8 @@ function Controller(props) {
 
     function handleMove(coordinates){
         const {x, y} = coordinates;
+
+        // Handling required here
         setActive(false);
         propagate(x, y);
         setActive(true);

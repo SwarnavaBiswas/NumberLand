@@ -1,0 +1,9 @@
+.boardRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* align-items: center; */
+    align-items: stretch;
+    /* flex: 1; */
+    gap: 2px;
+}

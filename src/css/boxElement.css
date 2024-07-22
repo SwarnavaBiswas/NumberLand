@@ -1,0 +1,23 @@
+.boxElement{
+    border: 1px solid black;
+    display: flex;
+    /* align-items: center; */
+    align-items: center;
+    justify-content: center;
+    /* flex: 1; */
+    cursor: default;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+.validBox:hover{
+    cursor: pointer;
+    background-color: silver;
+}
+.boxElement > .textfit{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

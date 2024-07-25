@@ -16,8 +16,8 @@ import { Textfit } from 'react-textfit';
 */
 function BoxElement(props) {
     const {data, width, height, player, index, currentPlayer, isActive, handleMove} = props;
-    const player1Color = "blue";
-    const player2Color = "pink";
+    const player1Color = "skyblue";
+    const player2Color = "red";
     // const {fontSize, ref} = useFitText();
     const dimensions = {
         width: width + "px",
@@ -37,7 +37,7 @@ function BoxElement(props) {
     }
   return (
     // <div className={"boxElement"} style={{fontSize, ...dimensions, color: color}}>
-    <div onClick={handleClick} className={classes} style={{...dimensions, color: (player === 1)? player1Color: player2Color}}>
+    <div onClick={handleClick} className={classes} style={{...dimensions,border: '2px solid white', padding: '2px', color: (player === 1)? player1Color: player2Color}}>
         <Textfit className='textfit'>
             {data}
         </Textfit>

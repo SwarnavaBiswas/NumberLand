@@ -1,0 +1,27 @@
+.challengeUnit{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    overflow: hidden;
+    order: 2;
+}
+.challengeUnit:hover{
+    cursor: pointer;
+    background-color: rgb(148, 241, 203);
+}
+.currentPlayer, .currentPlayer:hover{
+    cursor: auto;
+    background-color: lightgreen;
+    order: 1;
+}
+.challengeIndex{
+    width: 10%;
+    height: 100%;
+}
+.challenger{
+    width: 90%;
+    height: 100%;
+
+}

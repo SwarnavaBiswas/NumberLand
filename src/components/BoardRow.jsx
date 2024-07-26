@@ -14,7 +14,8 @@ import '../css/boardRow.css';
     }
 */
 function BoardRow(props) {
-    const {boardRow, width, height, rowIndex, currentPlayer, isActive, handleMove} = props;
+    const {boardRow, width, height, rowIndex, currentPlayer, isActive, handleMove, player1Color, player2Color} = props;
+    
   return (
     <div className='boardRow'>
         {
@@ -29,7 +30,9 @@ function BoardRow(props) {
                     index={{x: rowIndex, y: colIndex}}
                     currentPlayer={currentPlayer}
                     isActive={isActive}
-                    handleMove={handleMove}></BoxElement>
+                    handleMove={handleMove}
+                    player1Color={player1Color}
+                    player2Color={player2Color}></BoxElement>
                 )
             })
         }

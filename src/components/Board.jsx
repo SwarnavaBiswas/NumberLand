@@ -16,7 +16,7 @@ import '../css/board.css';
     }
  */
 function Board(props) {
-    const {boardMatrix, width, height, currentPlayer, isActive, handleMove} = props;
+    const {boardMatrix, width, height, currentPlayer, isActive, handleMove, player1Color, player2Color} = props;
     // const rows = boardMatrix.length;
     // const cols = boardMatrix[0].length;
     // const dimensions = {
@@ -37,7 +37,9 @@ function Board(props) {
                     rowIndex={rowIndex}
                     currentPlayer={currentPlayer}
                     isActive={isActive}
-                    handleMove={handleMove}></BoardRow>
+                    handleMove={handleMove}
+                    player1Color={player1Color}
+                    player2Color={player2Color}></BoardRow>
                 )
             })
         }

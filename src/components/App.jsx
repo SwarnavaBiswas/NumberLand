@@ -17,6 +17,11 @@ function App() {
   // const getStatus = async() => {
     //   const response = await Axios.get("/api/status")
     // }
+  function checkPairing(){
+    if(socketData.type === "paired"){
+
+    }
+  }
   useEffect(() => {
     // let socket = new WebSocket(WS_URL);
     setSocket(new WebSocket(WS_URL));
@@ -25,11 +30,13 @@ function App() {
     console.log("Socket is open!");
     setPageStatus(startingPage);
   }
+  
   socket.onmessage = function(event){
     console.log(event.data);
     const socketObj = JSON.parse(event.data);
     console.log(socketObj);
     setSocketData(socketObj);
+    checkPairing();
   }
   function setStatus(status){
     console.log(status);
@@ -38,7 +45,22 @@ function App() {
         setUsername(status.username);
         setPageStatus("main");
         socket.send(JSON.stringify({type: "setUsernameAcknowledge"}));
-        break;
+      break;
+      case "challengeAcknowledge":
+        setPageStatus("game");
+        socket.send(JSON.stringify({
+          type: "action",
+          command: "challengeAcknowledge",
+          playerNumber: status.playerNumber
+        }));
+      break;
+      case "paired":
+        socket.send(JSON.stringify({type: "action", command: "pairedAcknowledge"}));
+      break;
+      case "gotoMainAcknowledge":
+        setPageStatus("main");
+        socket.send(JSON.stringify({type: "gotoMainAcknowledge"}));
+      break;
     }
   }
   // function updatePage(){

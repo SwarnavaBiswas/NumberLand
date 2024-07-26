@@ -3,7 +3,7 @@ import ChallengeUnit from './ChallengeUnit';
 import '../css/challengeBoard.css';
 
 function ChallengeBoard(props) {
-    const {socketData, username} = props;
+    const {socketData, username, handleChallengerClick} = props;
     const [challengerList, setChallengerList] = useState([]);
     useEffect(() => {
         if(socketData.type === "clientList"){
@@ -17,14 +17,16 @@ function ChallengeBoard(props) {
   return (
     <div className='challengeBoard'>
         <div className='challengeBoardCaption'> Challengers: </div>
-        {
-            challengerList.map((challenger, index) => {
-                console.log(index, challenger);
-                return (
-                    <ChallengeUnit key={index} index={index} challenger={challenger} isPlayer={challenger === username}></ChallengeUnit>
-                )
-            })
-        }
+        <div className='challengeUnitsContainer'>
+            {
+                challengerList.map((challenger, index) => {
+                    console.log(index, challenger);
+                    return (
+                        <ChallengeUnit key={index} index={index} challenger={challenger} isPlayer={challenger === username} handleChallengerClick={handleChallengerClick}></ChallengeUnit>
+                    )
+                })
+            }
+        </div>
     </div>
   )
 }

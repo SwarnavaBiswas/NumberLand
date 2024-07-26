@@ -15,9 +15,7 @@ import { Textfit } from 'react-textfit';
     }
 */
 function BoxElement(props) {
-    const {data, width, height, player, index, currentPlayer, isActive, handleMove} = props;
-    const player1Color = "blue";
-    const player2Color = "pink";
+    const {data, width, height, player, index, currentPlayer, isActive, handleMove, player1Color, player2Color} = props;
     // const {fontSize, ref} = useFitText();
     const dimensions = {
         width: width + "px",
